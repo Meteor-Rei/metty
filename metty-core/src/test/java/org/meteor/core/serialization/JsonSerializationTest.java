@@ -1,8 +1,7 @@
 package org.meteor.core.serialization;
 
-import jdk.nashorn.internal.objects.annotations.Constructor;
 import lombok.Data;
-import org.metty.core.serialization.json.JsonSerialization;
+import org.meteor.metty.core.serialization.json.JsonSerialization;
 
 import java.util.Arrays;
 

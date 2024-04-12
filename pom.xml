@@ -13,6 +13,11 @@
         <module>metty-core</module>
         <module>metty-client</module>
         <module>metty-server</module>
+        <module>provider-api</module>
+        <module>metty-client-boot-starter</module>
+        <module>metty-server-boot-starter</module>
+        <module>consumer</module>
+        <module>provider</module>
     </modules>
 
     <properties>
@@ -23,6 +28,10 @@
         <netty.version>4.1.108.Final</netty.version>
         <lombok.version>1.18.24</lombok.version>
         <junit.version>4.13.2</junit.version>
+        <curator.version>4.2.0</curator.version>
+        <tomcat.version>9.0.22</tomcat.version>
+        <logback-classic.version>1.2.11</logback-classic.version>
+        <cglib.version>3.1</cglib.version>
     </properties>
 
 
@@ -45,6 +54,33 @@
     </dependencyManagement>
 
 
-
+    <build>
+        <pluginManagement>
+            <plugins>
+                <plugin>
+                    <groupId>org.springframework.boot</groupId>
+                    <artifactId>spring-boot-maven-plugin</artifactId>
+                    <version>${spring-boot.version}</version>
+                    <executions>
+                        <execution>
+                            <goals>
+                                <goal>repackage</goal>
+                            </goals>
+                        </execution>
+                    </executions>
+                </plugin>
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-compiler-plugin</artifactId>
+                    <version>3.8.0</version>
+                    <configuration>
+                        <source>${maven.compiler.source}</source>
+                        <target>${maven.compiler.target}</target>
+                        <encoding>${project.build.sourceEncoding}</encoding>
+                    </configuration>
+                </plugin>
+            </plugins>
+        </pluginManagement>
+    </build>
 
 </project>
